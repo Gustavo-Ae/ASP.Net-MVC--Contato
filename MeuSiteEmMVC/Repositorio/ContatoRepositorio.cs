@@ -3,14 +3,15 @@ using ControleContatos.Models;
 
 namespace ControleContatos.Repositorio
 {
-    public class ContatoRepositorio :  IContatoRepositorio
+    public class ContatoRepositorio : IContatoRepositorio
     {
         private readonly BancoContext _context;
 
         public ContatoRepositorio(BancoContext bancoContext)
         {
-            _context= bancoContext;
+            _context = bancoContext;
         }
+
         public ContatoModel Adicionar(ContatoModel contato)
         {
             //Gravar no banco de dados;
