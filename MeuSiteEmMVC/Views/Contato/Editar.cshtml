@@ -1,4 +1,5 @@
-﻿
+﻿@using ControleContatos.Models;
+@model ContatoModel
 @{
     ViewData["title"] = "Editar Contato";
 }
@@ -9,18 +10,21 @@
 
 </div>
 
-<form>
+<form asp-controller="Contato" asp-action="Alterar" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
     <div class="form-group  mb-2">
         <label for="nome">Nome</label>
-        <input type="text" class="form-control" placeholder="Digite o nome do contato">
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome do contato">
     </div>
     <div class="form-group  mb-2">
         <label for="email">Email</label>
-        <input type="email" class="form-control" placeholder="Digite o e-mail do contato">
+        <input type="email" asp-for="Email" class="form-control" placeholder="Digite o e-mail do contato">
     </div>
     <div class="form-group mb-4">
         <label for="celular">Celular</label>
-        <input type="text" class="form-control" placeholder="Digite o número do contato">
+        <input type="text" asp-for="Celular" class="form-control" placeholder="Digite o número do contato">
     </div>
 
     <button type="submit" class="btn btn-primary w-100">Alterar</button></p>
